@@ -9,6 +9,8 @@ const roles = [
   "always debugging something."
 ];
 
+
+
 const typedEl = document.getElementById('typed');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -44,3 +46,35 @@ if (typedEl) {
     tick();
   }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  const text = "Hi, I'm Reshmi kumari";
+  const heroTitle = document.getElementById("heroTitle");
+  let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      heroTitle.textContent += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 100);
+    }
+  }
+
+  typeWriter();
+});
+
+
+const text = "Reshmi Kumari";
+const nameElement = document.getElementById("name");
+
+let index = 0;
+
+function typeWriter() {
+  if (index < text.length) {
+    nameElement.innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeWriter, 150);
+  }
+}
+
+typeWriter();
